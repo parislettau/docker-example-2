@@ -35,14 +35,6 @@ COPY default.conf /etc/apache2/sites-available/000-default.conf
 # Remove default content (existing index.html)
 RUN rm /var/www/html/*
 
-# Add keys
-# RUN mkdir -p /root/.ssh \
-#     && chmod 700 /root/.ssh \
-#     && curl https://github.com/parislettau.keys >> /root/.ssh/authorized_keys \
-#     && chmod 644 /root/.ssh/authorized_keys \
-#     && sudo ufw allow 80 \
-#     && sudo ufw allow 443
-
 # Clone the Kirby Starterkit
 RUN git clone --depth 1 https://github.com/getkirby/starterkit.git /var/www/html/starterkit
 
